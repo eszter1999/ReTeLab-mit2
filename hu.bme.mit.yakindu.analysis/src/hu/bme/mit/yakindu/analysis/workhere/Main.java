@@ -39,7 +39,6 @@ public class Main {
 				for(int i = 0; i < ends.size();i++)
 					System.out.println(ends.get(i).getSource().getName() + "->" + ends.get(i).getTarget().getName());
 			}
-			
 		}
 		
 		// Transforming the model into a graph representation
