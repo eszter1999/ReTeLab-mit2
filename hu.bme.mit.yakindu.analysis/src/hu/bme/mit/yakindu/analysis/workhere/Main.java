@@ -39,15 +39,26 @@ public class Main {
 				for(int i = 0; i < ends.size();i++)
 					System.out.println(ends.get(i).getSource().getName() + "->" + ends.get(i).getTarget().getName());
 			}
+			//System.out.println();
+			if(content instanceof State) {
+				State state = (State) content;
+				if (state.getOutgoingTransitions().isEmpty() )
+					System.out.println(state.getName());
+			}
+			//System.out.println();
+			int i=0;
+			if(content instanceof State) {
+				State state = (State) content;
+				if(state.getName() =="") {
+					System.out.println("State"+i);
+					i++;
+				}
+			}
 		}
 		
 		// Transforming the model into a graph representation
 		String content = model2gml.transform(root);
 		// and saving it
 		manager.saveFile("model_output/graph.gml", content);
-	}
-	
-	void tPrint() {
-		
 	}
 }
